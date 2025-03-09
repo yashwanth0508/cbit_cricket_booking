@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cricket Ground Booking</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('cricket.jpeg') no-repeat center center fixed;
+            background-size: cover;
+            text-align: center;
+        }
+        header {
+            background: #0275d8;
+            color: white;
+            padding: 15px;
+            font-size: 24px;
+        }
+        .navbar {
+            background: #025aa5;
+            padding: 10px;
+            text-align: center;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            font-size: 18px;
+        }
+        .navbar a:hover {
+            background: #0275d8;
+            border-radius: 5px;
+        }
+        .container {
+            width: 80%;
+            margin: 80px auto 20px;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px gray;
+        }
+        .btn {
+            background: #0275d8;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .btn:hover {
+            background: #025aa5;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 10px;
+            text-align: center;
+        }
+    </style>
+    <script>
+        function showAvailability() {
+            document.getElementById('availability').style.display = 'block';
+        }
+        function logout() {
+            alert("You have been logged out!");
+            window.location.href = 'index.html';
+        }
+        function success(){
+            alert("Slot has been Booked!")
+        }
+        function startMatch(matchId) {
+            alert("Match " + matchId + " has started!");
+        }
+    </script>
+</head>
+<body>
+    <header>Cricket Ground Booking</header>
+    <div class="navbar">
+        <a href="#home">Home</a>
+        <a href="#contact">Contact Us</a>
+        <a href="#booked">Booked Matches</a>
+        <a href="#" onclick="logout()">Logout</a>
+    </div>
+    
+    <div class="container" id="home">
+        <h2>Book Your Ground</h2>
+        <form>
+            <label for="name">Your Name:</label><br>
+            <input type="text" id="name" name="name" required><br><br>
+            
+            <label for="date">Select Date:</label><br>
+            <input type="date" id="date" name="date" required><br><br>
+            
+            <label for="time">Select Time Slot:</label><br>
+            <select id="time" name="time">
+                <option value="morning">Morning (7 AM - 11 AM)</option>
+                <option value="afternoon">Afternoon (12 PM - 4 PM)</option>
+                <option value="evening">Evening (5 PM - 9 PM)</option>
+            </select><br><br>
+            
+            <button type="submit" class="btn" onclick="success()">Book Now</button>
+        </form>
+    </div>
+    
+    <div class="container">
+        <h2>Available Grounds</h2>
+        <p>Check the availability of grounds before booking.</p>
+        <button class="btn" onclick="showAvailability()">View Availability</button>
+        <div id="availability" style="display: none;">
+            <h3>Match Slots</h3>
+            <ul>
+                <li>Morning: 7 AM - 11 AM (Available)</li>
+                <li>Afternoon: 12 PM - 4 PM (Booked)</li>
+                <li>Evening: 5 PM - 9 PM (Available)</li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="container" id="booked">
+        <h2>Booked Matches</h2>
+        <table>
+            <tr>
+                <th>Match ID</th>
+                <th>Opponents</th>
+                <th>Date</th>
+                <th>Time Slot</th>
+                <th>Action</th>
+            </tr>
+            <tr>
+                <td>001</td>
+                <td>CSE1 vs CSM</td>
+                <td>2025-03-10</td>
+                <td>Morning (7 AM - 11 AM)</td>
+                <td><button class="btn"">Start</button></td>
+            </tr>
+            <tr>
+                <td>002</td>
+                <td>ECE1 vs EEE1</td>
+                <td>2025-03-11</td>
+                <td>Afternoon (12 PM - 4 PM)</td>
+                <td><button class="btn"">Start</button></td>
+            </tr>
+            <tr>
+                <td>003</td>
+                <td>MECH1 vs CHEM1</td>
+                <td>2025-03-12</td>
+                <td>Afternoon (12 PM - 4 PM)</td>
+                <td><button class="btn"">Start</button></td>
+            </tr>
+        </table>
+    </div>
+    
+    <div class="container" id="contact">
+        <h2>Contact Us</h2>
+        <p>Email: info@cricketbooking.com</p>
+        <p>Phone: +123 456 7890</p>
+    </div>
+</body>
+</html>
