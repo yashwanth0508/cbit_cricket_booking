@@ -42,7 +42,8 @@
             border-radius: 5px;
         }
         .container {
-            width: 80%;
+            width: 90%;
+            max-width: 800px;
             margin: 80px auto 20px;
             background: rgba(255, 255, 255, 0.9);
             padding: 20px;
@@ -71,6 +72,44 @@
         th, td {
             padding: 10px;
             text-align: center;
+        }
+        
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                position: relative;
+                gap: 10px;
+                padding: 15px 0;
+            }
+            .navbar a {
+                display: block;
+                padding: 10px;
+                font-size: 16px;
+            }
+            .container {
+                width: 95%;
+                margin-top: 20px;
+            }
+            table, th, td {
+                font-size: 14px;
+                padding: 8px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            header {
+                font-size: 20px;
+                padding: 10px;
+            }
+            .btn {
+                width: 100%;
+                padding: 12px;
+            }
+            input, select {
+                width: 100%;
+                padding: 8px;
+                margin-top: 5px;
+            }
         }
     </style>
     <script>
@@ -147,21 +186,7 @@
                 <td>CSE1 vs CSM</td>
                 <td>2025-03-10</td>
                 <td>Morning (7 AM - 11 AM)</td>
-                <td><button class="btn"">Start</button></td>
-            </tr>
-            <tr>
-                <td>002</td>
-                <td>ECE1 vs EEE1</td>
-                <td>2025-03-11</td>
-                <td>Afternoon (12 PM - 4 PM)</td>
-                <td><button class="btn"">Start</button></td>
-            </tr>
-            <tr>
-                <td>003</td>
-                <td>MECH1 vs CHEM1</td>
-                <td>2025-03-12</td>
-                <td>Afternoon (12 PM - 4 PM)</td>
-                <td><button class="btn"">Start</button></td>
+                <td><button class="btn">Start</button></td>
             </tr>
         </table>
     </div>
