@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -93,6 +93,149 @@
             var newUsername = document.getElementById('new-username').value;
             var newPassword = document.getElementById('new-password').value;
             var dob = document.getElementById('dob').value;
+            if (newUsername && newPassword && dob) {
+                alert("Account created successfully!");
+                document.getElementById('create-account-container').style.display = 'none';
+                document.getElementById('login-container').style.display = 'block';
+            } else {
+                alert("Please fill in all fields");
+            }
+        }
+    </script>
+</head>
+<body>
+    <header>Cricket Ground Booking</header>
+
+    <div id="login-container" class="container">
+        <h2>Login</h2>
+        <form onsubmit="event.preventDefault(); login();">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <button type="submit" class="btn">Login</button>
+        </form>
+        <div class="links">
+            <a onclick="showCreateAccount()">Create Account</a> | <a href="#">Forgot Password?</a>
+        </div>
+    </div>
+    
+    <div id="create-account-container" class="container" style="display: none;">
+        <h2>Create Account</h2>
+        <form onsubmit="event.preventDefault(); createAccount();">
+            <label for="new-username">Username:</label>
+            <input type="text" id="new-username" name="new-username" required>
+
+            <label for="new-password">Create Password:</label>
+            <input type="password" id="new-password" name="new-password" required>
+
+            <label for="dob">Date of Birth:</label>
+            <input type="date" id="dob" name="dob" required>
+
+            <button type="submit" class="btn">Create Account</button>
+        </form>
+    </div>
+</body>
+</html>
+ -->
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cricket Ground Booking</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('cricket.jpeg') no-repeat center center fixed;
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        header {
+            background: #0275d8;
+            color: white;
+            padding: 15px;
+            font-size: 24px;
+            width: 100%;
+            text-align: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+        }
+        .container {
+            width: 90%;
+            max-width: 400px;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px gray;
+            text-align: center;
+            margin-top: 100px;
+        }
+        label {
+            display: block;
+            text-align: left;
+            margin: 10px 0 5px;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        .btn {
+            background: #0275d8;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            width: 100%;
+            margin-top: 10px;
+        }
+        .btn:hover {
+            background: #025aa5;
+        }
+        .links {
+            margin-top: 10px;
+        }
+        .links a {
+            color: #0275d8;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .links a:hover {
+            text-decoration: underline;
+        }
+    </style>
+    <script>
+        function login() {
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+
+            // Placeholder for authentication logic (e.g., backend call)
+            alert("Login attempted with:\nUsername: " + username);
+        }
+
+        function showCreateAccount() {
+            document.getElementById('login-container').style.display = 'none';
+            document.getElementById('create-account-container').style.display = 'block';
+        }
+
+        function createAccount() {
+            var newUsername = document.getElementById('new-username').value;
+            var newPassword = document.getElementById('new-password').value;
+            var dob = document.getElementById('dob').value;
+
             if (newUsername && newPassword && dob) {
                 alert("Account created successfully!");
                 document.getElementById('create-account-container').style.display = 'none';
